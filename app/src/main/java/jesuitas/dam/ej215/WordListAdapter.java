@@ -47,8 +47,8 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
             String web=mpeliculas.get(mposition).murl;
             Intent intent= new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(web));
-            if (intent.resolveActivity()){
-
+            if (intent.resolveActivity(mcontext.getPackageManager()!=null)){
+                mcontext.startActivity(intent);
             }
         }
     }
